@@ -4,12 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cognitive Liberty Foundation</title>
+  <meta name="description" content="Protecting cognitive liberty in the age of AI and neurotechnology." />
+  <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar">
+
+  <header class="navbar" role="banner">
     <div class="logo">Cognitive Liberty Foundation</div>
-    <nav>
+    <nav role="navigation">
       <ul>
         <li><a href="#mission">Mission</a></li>
         <li><a href="#threats">Threats</a></li>
@@ -23,7 +26,7 @@
     <div class="hero-content">
       <h1>Protecting the Future of Mental Freedom</h1>
       <p>Advocating for the human right to cognitive liberty in an age of AI and neurotechnology.</p>
-      <a href="#contact" class="btn-primary">Support the Petition</a>
+      <a href="#contact" class="btn-primary" role="button">Support the Petition</a>
     </div>
   </section>
 
@@ -62,18 +65,33 @@
 
   <section id="contact" class="contact-section">
     <h2>Join the Movement</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Why Cognitive Liberty Matters to You..." required></textarea>
-      <button type="submit">Sign the Petition</button>
+    <form id="contactForm" action="/submit" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+
+      <label for="message">Why Cognitive Liberty Matters to You</label>
+      <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+
+      <button type="submit" class="btn-primary">Sign the Petition</button>
     </form>
+
+    <!-- PayPal Donate Button -->
+    <div style="margin-top: 20px;">
+      <a href="https://www.paypal.com/donate/?hosted_button_id=ETUKQ9S7Y5FHL"
+         target="_blank" rel="noopener noreferrer"
+         class="btn-primary">
+         Donate via PayPal
+      </a>
+    </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <p>© 2025 Cognitive Liberty Foundation | All Rights Reserved</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
